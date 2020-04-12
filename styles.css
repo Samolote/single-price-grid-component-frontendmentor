@@ -35,7 +35,7 @@ body {
 	margin: 5rem 2.5rem;
 	border-radius: 6px;
 	overflow: hidden;
-	box-shadow: 0 0 2rem -1rem var(--grayish-blue);
+	box-shadow: 0 0 2rem -0.75rem var(--grayish-blue);
 }
 
 .price-header {
@@ -152,12 +152,21 @@ body {
 }
 
 @media (min-width: 800px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+	}
+
 	.price-grid {
+		flex-basis: 100%;
+		align-self: center;
+		margin: 0 auto;
 		grid-template-columns: repeat(2, minmax(min-content, 1fr));
 		grid-template-areas:
 			'price-header price-header'
 			'subscription perks';
-		margin: 5rem auto;
 		max-width: 700px;
 	}
 
