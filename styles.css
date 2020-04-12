@@ -1,0 +1,171 @@
+:root {
+	--dark-cyan: hsl(179, 61%, 44%);
+	--cyan: hsl(179, 62%, 43%);
+	--light-cyan: hsl(179, 47%, 52%);
+	--bright-yellow: hsl(71, 73%, 54%);
+
+	--white: hsl(0, 100%, 100%);
+	--light-gray: hsl(204, 43%, 93%);
+	--grayish-blue: hsl(218, 22%, 67%);
+	--black: hsl(0, 0%, 0%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 13px;
+	font-family: 'Karla', sans-serif;
+}
+
+body {
+	background-color: var(--light-gray);
+}
+
+.price-grid {
+	display: grid;
+	grid-template-columns: minmax(min-content, 1fr);
+	grid-template-areas:
+		'price-header'
+		'subscription'
+		'perks';
+	margin: 5rem 2.5rem;
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow: 0 0 2rem -1rem var(--grayish-blue);
+}
+
+.price-header {
+	grid-area: price-header;
+	padding: 2.5rem 2.25rem;
+	background-color: var(--white);
+}
+
+.price-header__title {
+	margin: 0 0 1.5rem;
+	font-size: 1.8em;
+	font-weight: 700;
+	color: var(--cyan);
+}
+
+.price-header__subtitle {
+	margin: 0 0 1rem;
+	font-size: 1.3em;
+	color: var(--bright-yellow);
+}
+
+.price-header__description {
+	margin: 0;
+	line-height: 1.8;
+	color: var(--grayish-blue);
+}
+
+.subscription {
+	grid-area: subscription;
+	padding: 2.5rem 2.25rem 2.25rem;
+	background-color: var(--dark-cyan);
+	color: var(--light-gray);
+}
+
+.subscription__title {
+	margin: 0 0 1rem;
+	font-size: 1.3em;
+}
+
+.subscription__price {
+	display: flex;
+	margin: 0 0 0.35rem;
+	font-size: 2.1em;
+	font-weight: 700;
+}
+
+.subscription__interval {
+	align-self: center;
+	margin-left: 0.8rem;
+	font-size: 0.5em;
+	font-weight: 400;
+	opacity: 0.7;
+}
+
+.subscription__description {
+	margin: 0 0 2rem;
+}
+
+.subscription__sign-up {
+	display: block;
+	margin: 0 auto;
+	padding: 1rem;
+	border-radius: 6px;
+	max-width: 350px;
+	background-color: var(--bright-yellow);
+	font-size: 1.1em;
+	font-weight: 700;
+	text-decoration: none;
+	text-align: center;
+	color: var(--light-gray);
+	box-shadow: 0 0.5rem 2rem -1rem var(--black);
+}
+
+.perks {
+	grid-area: perks;
+	padding: 2.5rem 2.25rem 2.25rem;
+	background-color: var(--light-cyan);
+	color: var(--light-gray);
+}
+
+.perks__title {
+	margin: 0 0 1.2rem;
+	font-size: 1.3em;
+}
+
+.perks__list {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.perks__perk {
+	font-size: 0.9em;
+	line-height: 1.4;
+}
+
+.footer {
+	margin-top: 5rem;
+}
+
+.attribution {
+	font-size: 0.733em;
+	text-align: center;
+}
+
+.attribution__anchor {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 500px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 800px) {
+	.price-grid {
+		grid-template-columns: repeat(2, minmax(min-content, 1fr));
+		grid-template-areas:
+			'price-header price-header'
+			'subscription perks';
+		margin: 5rem auto;
+		max-width: 700px;
+	}
+
+	.subscription {
+		padding: 2.5rem 2.25rem;
+	}
+
+	.perks {
+		padding: 2.5rem 2.25rem;
+	}
+}
